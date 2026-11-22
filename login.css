@@ -295,7 +295,7 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
   background:
     radial-gradient(ellipse at 50% 42%, #5b492740, transparent 40%) center / cover no-repeat,
     linear-gradient(90deg, #0b0c0bd1 0%, #0b0c0b87 50%, #0b0c0bd1 100%) center / cover no-repeat,
-    url("assets/olimpo-cover.jpg") center / contain no-repeat,
+    url("assets/olimpo-cover.jpg") 3% center / auto 94vh no-repeat,
     #11110f;
   display: flex;
   isolation: isolate;
@@ -324,9 +324,10 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
   background: transparent;
   justify-content: center;
   min-height: 100vh;
+  margin-right: clamp(28px, 8vw, 130px);
   padding: 58px 24px 72px;
   position: relative;
-  width: 100%;
+  width: min(390px, calc(100vw - 48px));
   z-index: 1;
 }
 
@@ -336,22 +337,26 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
 .intro { margin-bottom: 25px; text-align: center; }
 .security-note { line-height: 1.5; text-align: center; }
 
-@media (max-width: 640px) {
-  .brand-panel { display: none; }
-  .login-layout { overflow: visible; }
+@media (max-width: 1200px) {
+  .login-layout { display: block; overflow: visible; }
   .login-layout {
     background:
-      radial-gradient(ellipse at 50% 42%, #5b492740, transparent 40%) center / cover no-repeat,
-      linear-gradient(90deg, #0b0c0bbd 0%, #0b0c0b80 50%, #0b0c0bbd 100%) center / cover no-repeat,
-      url("assets/olimpo-cover.jpg") center / cover no-repeat,
+      radial-gradient(ellipse at 50% 20%, #5b492740, transparent 46%) center / cover no-repeat,
+      linear-gradient(180deg, #0b0c0b40 0%, #0b0c0b70 40%, #11110f 68%) center / cover no-repeat,
+      url("assets/olimpo-cover.jpg") center top / auto 58vh no-repeat,
       #11110f;
   }
-  .login-layout::before { height: 330px; opacity: .09; right: -15px; top: 1%; width: 135px; }
-  .login-layout::after { bottom: 0; height: 300px; left: -20px; opacity: .09; width: 125px; }
+  .login-layout::before { height: 300px; opacity: .08; right: 3%; top: 5%; width: 110px; }
+  .login-layout::after { bottom: 8%; height: 260px; left: 2%; opacity: .08; width: 100px; }
   .form-panel {
     background: transparent;
-    justify-content: center;
-    min-height: 100svh;
-    padding: 34px 23px 65px;
+    margin: 58vh auto 0;
+    min-height: 0;
+    padding: 20px 23px 65px;
+    width: min(100%, 440px);
   }
+}
+
+@media (max-width: 640px) {
+  .form-panel { padding-left: 23px; padding-right: 23px; }
 }
