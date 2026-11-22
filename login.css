@@ -292,6 +292,7 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
 
 .login-layout {
   background: url("assets/olimpo-login-background.jpg") center / cover no-repeat #11110f;
+  align-items: stretch;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -299,6 +300,15 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
 }
 
 .brand-panel, .form-top, .login-layout::before, .login-layout::after { display: none; }
+
+.brand-art {
+  align-self: center;
+  display: block;
+  height: auto;
+  margin: auto auto 14px;
+  object-fit: contain;
+  width: min(340px, 40vh);
+}
 
 .form-panel {
   align-items: center;
@@ -330,13 +340,12 @@ form {
 
 @media (max-width: 1200px) {
   .login-layout {
-    background: url("assets/olimpo-cover.jpg") center top / auto 58vh no-repeat #11110f;
-    display: block;
+    background-position: center;
     min-height: 100svh;
     overflow: visible;
-    padding-top: 58vh;
   }
 
+  .brand-art { margin: 5vh auto 12px; width: min(230px, 58vw); }
   .form-panel {
     background: linear-gradient(180deg, #11110fe8, #11110f 24%);
     padding: 20px 23px 24px;
