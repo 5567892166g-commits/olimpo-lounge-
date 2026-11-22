@@ -291,71 +291,59 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
 }
 
 .login-layout {
-  align-items: center;
-  background:
-    radial-gradient(ellipse at 50% 42%, #5b492740, transparent 40%) center / cover no-repeat,
-    linear-gradient(90deg, #0b0c0b00 0%, #0b0c0b00 48%, #0b0c0b55 100%) center / cover no-repeat,
-    url("assets/olimpo-login-background.jpg") center / cover no-repeat,
-    #11110f;
+  background: url("assets/olimpo-login-background.jpg") center / cover no-repeat #11110f;
   display: flex;
-  isolation: isolate;
+  flex-direction: column;
   justify-content: flex-end;
-  overflow: hidden;
-  position: relative;
+  min-height: 100vh;
 }
 
-.brand-panel, .form-top { display: none; }
-
-.login-layout::before, .login-layout::after {
-  background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 700' fill='none'%3E%3Cpath d='M210 12 100 252h82L66 688l198-316h-91L280 12z' stroke='%23d7b779' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='m102 252-66 36 42 13m104-49 57-25-37-15' stroke='%23d7b779' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-  content: "";
-  height: min(76vh, 700px);
-  opacity: .14;
-  pointer-events: none;
-  position: absolute;
-  width: clamp(150px, 22vw, 270px);
-  z-index: 0;
-}
-
-.login-layout::before { height: 220px; left: 51%; opacity: .1; top: 5%; transform: rotate(9deg); width: 90px; }
-.login-layout::after { bottom: 5%; height: 180px; left: 48%; opacity: .08; transform: rotate(187deg) scale(.78); width: 80px; }
+.brand-panel, .form-top, .login-layout::before, .login-layout::after { display: none; }
 
 .form-panel {
-  background: transparent;
+  align-items: center;
+  background: linear-gradient(180deg, #11110fc4, #11110ff7 28%, #11110f 100%);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
-  margin-right: clamp(28px, 8vw, 130px);
-  padding: 58px 24px 72px;
-  position: relative;
-  width: min(390px, calc(100vw - 48px));
-  z-index: 1;
+  min-height: 0;
+  padding: 13px 24px 14px;
+  width: 100%;
 }
 
-.login-card { max-width: 390px; }
+.login-card { margin: 0 auto; max-width: 860px; width: 100%; }
+.login-card > .eyebrow, .intro { text-align: center; }
+.intro { margin: 6px 0 16px; }
 
-.login-card > .eyebrow { text-align: center; }
-.intro { margin-bottom: 25px; text-align: center; }
-.security-note { line-height: 1.5; text-align: center; }
+form {
+  column-gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 0;
+}
+
+.field-group { align-content: start; display: grid; gap: 8px; }
+.password-label { margin-top: 0; }
+.form-error, .submit-button { grid-column: 1 / -1; }
+.submit-button { margin-top: 16px; }
+.security-note { line-height: 1.5; margin-top: 13px; padding-top: 10px; text-align: center; }
+.form-footer { margin: 10px auto 0; max-width: 860px; position: static; width: 100%; }
 
 @media (max-width: 1200px) {
-  .login-layout { display: block; overflow: visible; }
   .login-layout {
-    background:
-      radial-gradient(ellipse at 50% 20%, #5b492740, transparent 46%) center / cover no-repeat,
-      linear-gradient(180deg, #0b0c0b40 0%, #0b0c0b70 40%, #11110f 68%) center / cover no-repeat,
-      url("assets/olimpo-cover.jpg") center top / auto 58vh no-repeat,
-      #11110f;
+    background: url("assets/olimpo-cover.jpg") center top / auto 58vh no-repeat #11110f;
+    display: block;
+    min-height: 100svh;
+    overflow: visible;
+    padding-top: 58vh;
   }
-  .login-layout::before, .login-layout::after { display: none; }
-  .form-panel {
-    background: transparent;
-    margin: 58vh auto 0;
-    min-height: 0;
-    padding: 20px 23px 65px;
-    width: min(100%, 440px);
-  }
-}
 
-@media (max-width: 640px) {
-  .form-panel { padding-left: 23px; padding-right: 23px; }
+  .form-panel {
+    background: linear-gradient(180deg, #11110fe8, #11110f 24%);
+    padding: 20px 23px 24px;
+  }
+
+  form { grid-template-columns: 1fr; row-gap: 14px; }
+  .form-error, .submit-button { grid-column: auto; }
+  .submit-button { margin-top: 2px; }
+  .form-footer { padding-bottom: 3px; }
 }
