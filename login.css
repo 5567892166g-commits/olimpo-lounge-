@@ -291,7 +291,7 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
 }
 
 .login-layout {
-  background: url("assets/olimpo-login-background.jpg") center / cover no-repeat #11110f;
+  background: url("assets/olimpo-login-background.jpg") center top / 100% auto no-repeat #11110f;
   align-items: stretch;
   display: flex;
   flex-direction: column;
@@ -304,17 +304,24 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
 
 .brand-art {
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto auto 12px;
+}
+
+.zeus-mark, .brand-phrases {
   display: block;
   height: auto;
-  margin: auto auto 14px;
-  mix-blend-mode: screen;
   object-fit: contain;
-  width: min(520px, 52vh);
 }
+
+.zeus-mark { width: min(185px, 24vh); }
+.brand-phrases { margin-top: -6px; mix-blend-mode: screen; width: min(350px, 70vw); }
 
 .form-panel {
   align-items: center;
-  background: linear-gradient(180deg, #11110fc4, #11110ff7 28%, #11110f 100%);
+  background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -325,7 +332,7 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
 
 .login-card { margin: 0 auto; max-width: 860px; width: 100%; }
 .login-card > .eyebrow, .intro { text-align: center; }
-.intro { margin: 6px 0 16px; }
+.intro { margin: 6px 0 12px; }
 
 form {
   column-gap: 16px;
@@ -337,24 +344,26 @@ form {
 .password-label { margin-top: 0; }
 .form-error, .submit-button { grid-column: 1 / -1; }
 .submit-button { margin-top: 16px; }
-.security-note { line-height: 1.5; margin-top: 13px; padding-top: 10px; text-align: center; }
-.form-footer { margin: 10px auto 0; max-width: 860px; position: static; width: 100%; }
+.security-note { line-height: 1.5; margin-top: 8px; padding-top: 6px; text-align: center; }
+.form-footer { margin: 6px auto 0; max-width: 860px; position: static; width: 100%; }
 
 @media (max-width: 1200px) {
   .login-layout {
-    background-position: center;
+    background-position: center top;
     min-height: 100svh;
     overflow: visible;
   }
 
-  .brand-art { margin: 5vh auto 12px; width: min(320px, 82vw); }
+  .brand-art { margin: 2vh auto 6px; }
+  .zeus-mark { width: min(145px, 38vw); }
+  .brand-phrases { margin-top: -4px; width: min(260px, 74vw); }
   .form-panel {
-    background: linear-gradient(180deg, #11110fe8, #11110f 24%);
-    padding: 20px 23px 24px;
+    background: transparent;
+    padding: 14px 23px 18px;
   }
 
-  form { grid-template-columns: 1fr; row-gap: 14px; }
+  form { grid-template-columns: 1fr; row-gap: 11px; }
   .form-error, .submit-button { grid-column: auto; }
-  .submit-button { margin-top: 2px; }
-  .form-footer { padding-bottom: 3px; }
+  .submit-button { margin-top: 0; }
+  .form-footer { padding-bottom: 0; }
 }
