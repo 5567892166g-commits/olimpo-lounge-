@@ -291,13 +291,18 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
 }
 
 .login-layout {
-  background: url("assets/olimpo-login-background.jpg") center top / 100% auto no-repeat #11110f;
+  background:
+    radial-gradient(ellipse at 50% 30%, #d7b77920, transparent 56%),
+    linear-gradient(180deg, #11110f99 0%, #11110fc9 58%, #11110ff2 100%),
+    url("assets/olimpo-login-background.jpg") center / cover no-repeat #11110f;
   align-items: stretch;
   display: flex;
   flex-direction: column;
+  height: 100svh;
   isolation: isolate;
   justify-content: flex-end;
-  min-height: 100vh;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .brand-panel, .form-top, .login-layout::before, .login-layout::after { display: none; }
@@ -307,7 +312,8 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto auto 12px;
+  flex: 0 0 auto;
+  margin: auto auto 6px;
 }
 
 .zeus-mark, .brand-phrases {
@@ -316,54 +322,69 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
   object-fit: contain;
 }
 
-.zeus-mark { width: min(185px, 24vh); }
-.brand-phrases { margin-top: -6px; mix-blend-mode: screen; width: min(350px, 70vw); }
+.zeus-mark { width: min(150px, 19vh); }
+.brand-phrases { margin-top: -6px; mix-blend-mode: screen; width: min(300px, 66vw); }
 
 .form-panel {
   align-items: center;
-  background: transparent;
+  background: radial-gradient(ellipse at 50% 0%, #d7b77912, transparent 72%);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 0 0 auto;
   min-height: 0;
-  padding: 13px 24px 14px;
+  padding: 8px 24px 10px;
   width: 100%;
 }
 
-.login-card { margin: 0 auto; max-width: 860px; width: 100%; }
+.login-card { margin: 0 auto; max-width: 740px; width: 100%; }
 .login-card > .eyebrow, .intro { text-align: center; }
-.intro { margin: 6px 0 12px; }
+.intro { margin: 4px 0 8px; }
 
 form {
   column-gap: 16px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  row-gap: 0;
+  row-gap: 8px;
 }
 
-.field-group { align-content: start; display: grid; gap: 8px; }
+.field-group { align-content: start; display: grid; gap: 5px; }
 .password-label { margin-top: 0; }
+.password-label label { margin-bottom: 0; }
 .form-error, .submit-button { grid-column: 1 / -1; }
-.submit-button { margin-top: 16px; }
-.security-note { line-height: 1.5; margin-top: 8px; padding-top: 6px; text-align: center; }
-.form-footer { margin: 6px auto 0; max-width: 860px; position: static; width: 100%; }
+.submit-button { margin-top: 4px; }
+.security-note { border-top: 0; line-height: 1.5; margin-top: 6px; padding-top: 0; text-align: center; }
+.form-footer { margin: 2px auto 0; max-width: 740px; position: static; width: 100%; }
+
+.input-wrap {
+  background: #171814b8;
+  border-color: #d7b77930;
+  border-radius: 15px;
+  min-height: 44px;
+}
+
+.submit-button { border-radius: 999px; min-height: 43px; }
 
 @media (max-width: 1200px) {
   .login-layout {
-    background-position: center top;
-    min-height: 100svh;
-    overflow: visible;
+    background-position: center, center, center;
   }
 
-  .brand-art { margin: 2vh auto 6px; }
-  .zeus-mark { width: min(145px, 38vw); }
-  .brand-phrases { margin-top: -4px; width: min(260px, 74vw); }
+  .brand-art { margin: auto auto 4px; }
+  .zeus-mark { width: min(120px, 17vh, 38vw); }
+  .brand-phrases { margin-top: -4px; width: min(230px, 68vw); }
   .form-panel {
-    background: transparent;
-    padding: 14px 23px 18px;
+    padding: 8px 23px 10px;
   }
 
-  form { grid-template-columns: 1fr; row-gap: 11px; }
+  form { grid-template-columns: 1fr; row-gap: 8px; }
   .form-error, .submit-button { grid-column: auto; }
   .submit-button { margin-top: 0; }
   .form-footer { padding-bottom: 0; }
+}
+
+@media (max-height: 680px) {
+  .zeus-mark { width: min(105px, 15vh); }
+  .brand-phrases { width: min(200px, 60vw); }
+  .form-panel { padding-bottom: 6px; padding-top: 6px; }
+  .security-note { margin-top: 4px; }
 }
