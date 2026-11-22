@@ -299,7 +299,7 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
     #11110f;
   display: flex;
   isolation: isolate;
-  justify-content: center;
+  justify-content: flex-end;
   overflow: hidden;
   position: relative;
 }
