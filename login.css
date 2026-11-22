@@ -294,8 +294,8 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
   align-items: center;
   background:
     radial-gradient(ellipse at 50% 42%, #5b492740, transparent 40%) center / cover no-repeat,
-    linear-gradient(90deg, #0b0c0bd1 0%, #0b0c0b87 50%, #0b0c0bd1 100%) center / cover no-repeat,
-    url("assets/olimpo-cover.jpg") 3% center / auto 94vh no-repeat,
+    linear-gradient(90deg, #0b0c0b00 0%, #0b0c0b00 48%, #0b0c0b55 100%) center / cover no-repeat,
+    url("assets/olimpo-login-background.jpg") center / cover no-repeat,
     #11110f;
   display: flex;
   isolation: isolate;
@@ -317,8 +317,8 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
   z-index: 0;
 }
 
-.login-layout::before { right: 7%; top: 8%; transform: rotate(9deg); }
-.login-layout::after { bottom: 1%; left: 7%; transform: rotate(187deg) scale(.78); }
+.login-layout::before { height: 220px; left: 51%; opacity: .1; top: 5%; transform: rotate(9deg); width: 90px; }
+.login-layout::after { bottom: 5%; height: 180px; left: 48%; opacity: .08; transform: rotate(187deg) scale(.78); width: 80px; }
 
 .form-panel {
   background: transparent;
@@ -346,8 +346,7 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
       url("assets/olimpo-cover.jpg") center top / auto 58vh no-repeat,
       #11110f;
   }
-  .login-layout::before { height: 300px; opacity: .08; right: 3%; top: 5%; width: 110px; }
-  .login-layout::after { bottom: 8%; height: 260px; left: 2%; opacity: .08; width: 100px; }
+  .login-layout::before, .login-layout::after { display: none; }
   .form-panel {
     background: transparent;
     margin: 58vh auto 0;

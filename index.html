@@ -12,7 +12,6 @@
   <main class="login-layout">
     <section class="form-panel">
       <div class="login-card">
-        <img class="login-art" src="assets/olimpo-cover.jpg" alt="Emblema e identidade visual do Olimpo Lounge">
         <div class="eyebrow">Bem-vindo ao seu espaço</div>
         <p class="intro">Entre com seu e-mail e sua senha de acesso.</p>
 
@@ -36,7 +35,7 @@
           <p class="form-error" id="formError" role="alert" hidden></p>
 
           <button class="submit-button" type="submit">
-            Entrar na demonstração
+            Acessar painel
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
           </button>
         </form>
@@ -66,7 +65,7 @@
       if (!form.reportValidity()) return;
 
       if (!/^\d{8}$/.test(password.value)) {
-        error.textContent = "A senha de demonstração deve ter exatamente 8 números.";
+        error.textContent = "Digite uma senha com exatamente 8 números.";
         error.hidden = false;
         password.focus();
         return;
