@@ -289,3 +289,70 @@ label { color: #dedbd1; font-size: 11px; margin-bottom: 8px; }
   .form-footer { left: 18px; right: 18px; }
   .form-footer span:last-child { letter-spacing: 0; }
 }
+
+.login-layout {
+  align-items: center;
+  background:
+    radial-gradient(ellipse at 50% 42%, #5b492740, transparent 40%),
+    radial-gradient(ellipse at 50% 100%, #382a1533, transparent 52%),
+    #11110f;
+  display: flex;
+  isolation: isolate;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-panel, .form-top { display: none; }
+
+.login-layout::before, .login-layout::after {
+  background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 700' fill='none'%3E%3Cpath d='M210 12 100 252h82L66 688l198-316h-91L280 12z' stroke='%23d7b779' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='m102 252-66 36 42 13m104-49 57-25-37-15' stroke='%23d7b779' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  content: "";
+  height: min(76vh, 700px);
+  opacity: .14;
+  pointer-events: none;
+  position: absolute;
+  width: clamp(150px, 22vw, 270px);
+  z-index: 0;
+}
+
+.login-layout::before { right: 7%; top: 8%; transform: rotate(9deg); }
+.login-layout::after { bottom: 1%; left: 7%; transform: rotate(187deg) scale(.78); }
+
+.form-panel {
+  background: transparent;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 58px 24px 72px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.login-card { max-width: 390px; }
+
+.login-art {
+  aspect-ratio: 702 / 870;
+  display: block;
+  height: auto;
+  margin: 0 auto 28px;
+  object-fit: contain;
+  width: min(250px, 68vw);
+}
+
+.login-card > .eyebrow { text-align: center; }
+.intro { margin-bottom: 25px; text-align: center; }
+.security-note { line-height: 1.5; text-align: center; }
+
+@media (max-width: 640px) {
+  .brand-panel { display: none; }
+  .login-layout { overflow: visible; }
+  .login-layout::before { height: 330px; opacity: .09; right: -15px; top: 1%; width: 135px; }
+  .login-layout::after { bottom: 0; height: 300px; left: -20px; opacity: .09; width: 125px; }
+  .form-panel {
+    background: transparent;
+    justify-content: center;
+    min-height: 100svh;
+    padding: 34px 23px 65px;
+  }
+}
